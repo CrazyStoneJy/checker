@@ -5,7 +5,7 @@ import { exec } from 'child_process';
 
 const program = new Command();
 
-program.name('hello')
+program.name('hello-cr')
     .description('CLI of check apk is proected whether or not.')
     .version(`${require('../package.json').version}`, '-v --version');
 

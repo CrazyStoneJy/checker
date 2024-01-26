@@ -1,9 +1,9 @@
 {
-  "name": "hello",
+  "name": "hello-cr",
   "version": "0.0.1",
   "description": "",
   "bin": {
-    "hello": "./bin/checker.mjs"
+    "hello-cr": "./bin/checker.mjs"
   },
   "main": "./bin/checker.mjs",
   "files": [
