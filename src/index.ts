@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { exec } from 'child_process';
+import { check } from './check';
+import { execShell } from './utils';
 
 const program = new Command();
 
-program.name('android-checker')
+program.name('acp-cli')
     .description('CLI of check apk is proected whether or not.')
     .version(`${require('../package.json').version}`, '-v --version');
 
-program.command('r')
+program.command('reverse')
     .description('reverse apk')
     .option('-o --output <output directory>')
     .argument('<apk file>', 'file of apk')
@@ -25,19 +26,28 @@ program.command('r')
         execShell(command_string);
     });
 
+program.command('check')
+.description('check apk is protected')
+.argument('<apk file>', 'file of apk')
+.action(async(apkFile, options) => {
+    if (!hasAPKSuffix(apkFile)) {
+        return;
+    }
+    console.log('analysis...');
+    let command_string = `apktool d ${apkFile}`;
+    if (options.output) {
+        command_string += ` -o ${options.output}`;
+    }
+    await execShell(command_string);
+    const apkName = getApkName(apkFile);
+    const res = await check(apkName);
+    console.log(`${apkFile} is ${res}`);
+    const r = await execShell(`rm -rf ${apkName}`);
+});
+
+
 program.parse(process.argv);
 
-function execShell(shell: string) {
-    exec(shell, (err, stdout, stderr) => {
-        if (err) {
-            // @ts-ignore
-            log(`stderr: ${stderr}`);
-            throw new Error('occur error');
-        }
-        console.log('shell execute success.');
-        console.log(`stdout: ${stdout}`);
-    });
-}
 
 function hasAPKSuffix(fileName: string): boolean {
     if (!fileName) {
@@ -46,9 +56,9 @@ function hasAPKSuffix(fileName: string): boolean {
     return fileName.endsWith('.apk');
 }
 
-
-function main() {
-    console.log('main');
+function getApkName(fileName: string): string {
+    if (hasAPKSuffix(fileName)) {
+        return fileName.substring(0, fileName.length - 4);
+    }
+    return '';
 }
-
-main();

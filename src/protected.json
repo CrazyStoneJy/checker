@@ -1,0 +1,52 @@
+[
+    {
+        "name": "bangbang",
+        "alias": "棒棒加固",
+        "libs": ["ibsecexe", "libsecshell"]
+    },
+    {
+        "name": "lejiagu",
+        "alias": "腾讯乐加固",
+        "libs": ["libshella", "libshell-super"]
+    },
+    {
+        "name": "360jiagu",
+        "alias": "360加固",
+        "libs": ["libprotectClass"]
+    },
+    {
+        "name": "alijiagu",
+        "alias": "阿里加固",
+        "libs": ["libmobisec"]
+    },
+    {
+        "name": "wangqinjiagu",
+        "alias": "网秦加固",
+        "libs": ["libnqshield"]
+    },
+    {
+        "name": "aijiami",
+        "alias": "爱加密",
+        "libs": ["ijiami"]
+    },
+    {
+        "name": "apkprotected",
+        "alias": "APKProtect加密",
+        "libs": ["libAPKProtect"]
+    },
+    {
+        "name": "safeonly",
+        "alias": "通付顿加密",
+        "libs": ["libNSaferOnly"]
+    },
+    {
+        "name": "najia",
+        "alias": "那迦加固",
+        "libs": ["libddog"]
+    },
+    {
+        "name": "baidu",
+        "alias": "百度加固",
+        "libs": "libbaiduprotect"
+    }
+]

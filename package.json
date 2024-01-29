@@ -1,11 +1,11 @@
 {
-  "name": "android-checker",
+  "name": "acp-cli",
   "version": "0.0.2",
   "description": "",
   "bin": {
-    "android-checker": "./bin/android-checker.mjs"
+    "acp-cli": "./bin/cli.mjs"
   },
-  "main": "./bin/android-checker.mjs",
+  "main": "./bin/cli.mjs",
   "files": [
     "bin",
     "dist"
