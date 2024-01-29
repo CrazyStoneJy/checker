@@ -1,11 +1,11 @@
 {
-  "name": "hello-cr",
-  "version": "0.0.1",
+  "name": "android-checker",
+  "version": "0.0.2",
   "description": "",
   "bin": {
-    "hello-cr": "./bin/checker.mjs"
+    "android-checker": "./bin/android-checker.mjs"
   },
-  "main": "./bin/checker.mjs",
+  "main": "./bin/android-checker.mjs",
   "files": [
     "bin",
     "dist"

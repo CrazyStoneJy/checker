@@ -5,25 +5,25 @@ import { exec } from 'child_process';
 
 const program = new Command();
 
-program.name('hello-cr')
+program.name('android-checker')
     .description('CLI of check apk is proected whether or not.')
     .version(`${require('../package.json').version}`, '-v --version');
 
-// program.command('r')
-//     .description('reverse apk')
-//     .option('-o --output <output directory>')
-//     .argument('<apk file>', 'file of apk')
-//     .action((apkFile, options) => {
-//         if (!hasAPKSuffix(apkFile)) {
-//             return;
-//         }
-//         let command_string = `apktool d ${apkFile}`;
-//         if (options.output) {
-//             command_string += ` -o ${options.output}`;
-//         }
-//         console.log("execute commnad:", command_string);
-//         execShell(command_string);
-//     });
+program.command('r')
+    .description('reverse apk')
+    .option('-o --output <output directory>')
+    .argument('<apk file>', 'file of apk')
+    .action((apkFile, options) => {
+        if (!hasAPKSuffix(apkFile)) {
+            return;
+        }
+        let command_string = `apktool d ${apkFile}`;
+        if (options.output) {
+            command_string += ` -o ${options.output}`;
+        }
+        console.log("execute commnad:", command_string);
+        execShell(command_string);
+    });
 
 program.parse(process.argv);
 
@@ -45,3 +45,10 @@ function hasAPKSuffix(fileName: string): boolean {
     }
     return fileName.endsWith('.apk');
 }
+
+
+function main() {
+    console.log('main');
+}
+
+main();
