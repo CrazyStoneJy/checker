@@ -12,7 +12,7 @@
     {
         "name": "360jiagu",
         "alias": "360加固",
-        "libs": ["libprotectClass"]
+        "libs": ["libprotectClass", "libjiagu", "libjiagu_a64", "libjiagu_x64", "libjiagu_x86"]
     },
     {
         "name": "alijiagu",

@@ -4,11 +4,6 @@ import protectedJson from './protected.json';
 
 const abis = ['arm64-v8a', 'armeabi', 'armeabi-v7a'];
 
-// {
-//     "name": "bangbang",
-//     "alias": "棒棒加固",
-//     "libs": ["ibsecexe", "libsecshell"]
-// },
 type ProtectedDesc = {
     name: string,
     alias: string,
@@ -16,13 +11,27 @@ type ProtectedDesc = {
 }
 
 export async function check(apkName: string): Promise<string> {
-    const dir = await cur_dir();
-    const lib_path = `${dir}/${apkName}/lib/${abis[0]}`;
-    const so_files = readdirSync(lib_path);
+    const so_files = await scan_so_file(apkName);
     const files = so_files.map((fileName: string) => {
         return fileName.substring(0, fileName.length - 3);
     })
     return has(files);
+}
+
+async function scan_so_file(apkName: string): Promise<string[]> {
+    let files = [];
+    const dir = await cur_dir();
+    // visist libs
+    const lib_path = `${dir}/${apkName}/lib/${abis[0]}`;
+    const so_libs = readdirSync(lib_path);
+    // visit assets
+    const assets_path = `${dir}/${apkName}/assets`;
+    const assets_files = readdirSync(assets_path);
+    const assets_so_libs = assets_files.filter((file: string) => {
+        return file.endsWith('.so');
+    })
+    files = [...so_libs, ...assets_so_libs];
+    return files;
 }
 
 function has(files: string[]): string {
