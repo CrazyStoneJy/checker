@@ -1,52 +1,127 @@
 [
     {
         "name": "bangbang",
-        "alias": "棒棒加固",
-        "libs": ["ibsecexe", "libsecshell"]
+        "alias": "梆梆安全",
+        "libs": ["ibsecexe.so", "libSecShell.so", "libsecmain.so", "libDexHelper.so", "libDexHelper-x86.so"]
     },
     {
         "name": "lejiagu",
-        "alias": "腾讯乐加固",
-        "libs": ["libshella", "libshell-super"]
+        "alias": "腾讯乐固",
+        "libs": ["libshella.so", "libshell-super.so", "libtup.so", "liblegudb.so", "libshellx.so", "mix.dex", "mixz.dex"]
     },
     {
         "name": "360jiagu",
         "alias": "360加固",
-        "libs": ["libprotectClass", "libjiagu", "libjiagu_a64", "libjiagu_x64", "libjiagu_x86"]
+        "libs": ["libprotectClass.so", "libjiagu.so", "libjiagu_a64.so", "libjiagu_x64.so", "libjiagu_x86.so", "libjiagu_art.so",
+                "libjgdtc.so", "libjgdtc_x86.so", "libjgdtc_a64.so", "libjgdtc_x64.so", "libjgdtc_art.so"]
     },
     {
         "name": "alijiagu",
         "alias": "阿里加固",
-        "libs": ["libmobisec"]
+        "libs": ["libmobisec.so"]
     },
     {
         "name": "wangqinjiagu",
         "alias": "网秦加固",
-        "libs": ["libnqshield"]
+        "libs": ["libnqshield.so"]
     },
     {
         "name": "aijiami",
         "alias": "爱加密",
-        "libs": ["ijiami"]
+        "libs": ["ijiami.so", "libexec.so", "libexecmain.so", "ijiami.dat", "ijiami.ajm"]
     },
     {
         "name": "apkprotected",
         "alias": "APKProtect加密",
-        "libs": ["libAPKProtect"]
+        "libs": ["libAPKProtect.so"]
     },
     {
         "name": "safeonly",
         "alias": "通付顿加密",
-        "libs": ["libNSaferOnly"]
+        "libs": ["libNSaferOnly.so", "libegis.so"]
     },
     {
         "name": "najia",
         "alias": "那迦加固",
-        "libs": ["libddog"]
+        "libs": ["libddog.so", "libchaosvmp.so", "libfdog.so", "libedog.so"]
     },
     {
         "name": "baidu",
         "alias": "百度加固",
-        "libs": "libbaiduprotect"
+        "libs": ["libbaiduprotect.so", "libbaiduprotect_x86.so", "libbaiduprotect_art.so", "baiduprotect1.jar"]
+    },
+    {
+        "name": "libnqshield",
+        "alias": "国信灵通",
+        "libs": ["libnqshield.so"]
+    },
+    {
+        "name": "qiming",
+        "alias": "启明星辰",
+        "libs": ["libvenSec.so", "libvenustech.so"]
+    },
+    {
+        "name": "shengda",
+        "alias": "盛大加固",
+        "libs": ["libapssec.so"]
+    },
+    {
+        "name": "ruixing",
+        "alias": "瑞星加固",
+        "libs": ["librsprotect.so"]
+    },
+    {
+        "name": "haiyunan",
+        "alias": "海云安加固",
+        "libs": ["libitsec.so"]
+    },
+    {
+        "name": "ali",
+        "alias": "阿里聚安全",
+        "libs": ["aliprotect.dat", "libsgmain.so", "libfakejni.so", "libzuma.so", "libzumadata.so", "libpreverify1.so",
+            "libdemolishdata.so", "libdemolish.so", "libsgsecuritybody.so", "libmobisec.so"]
+    },
+    {
+        "name": "tencent",
+        "alias": "腾讯云移动应用安全",
+        "libs": ["libshell-super.2019.so", "libBugly-yaq.so", "libzBugly-yaq.so", "tosversion.so", "libshellx-super.2019.so",
+        "tosprotection.so", "00O000ll111l.dex", "000O00ll111l.dex", "0000000lllll.dex", "00000olllll.dex", "0OO00l111l1l.dex",
+        "o0oooOO0ooOo.dat", "t86", "libtosprotection.x86.so", "libtosprotection.armeabi.so", "libtosprotection.armeabi-v7a.so"]
+    },
+    {
+        "name": "netease",
+        "alias": "网易易盾",
+        "libs": ["libnesec.so"]
+    },
+    {
+        "name": "jiwei",
+        "alias": "几维安全",
+        "libs": ["libkwscmm.so", "libkwscr.so", "libkwslinker.so"]
+    },
+    {
+        "name": "dingxiang",
+        "alias": "顶像科技",
+        "libs": ["libx3g.so"]
+    },
+    {
+        "name": "uu",
+        "alias": "UU安全",
+        "libs": ["libuusafe.jar.so", "libuusafe.so", "libuusafeempty.so"]
+    },
+    {
+        "name": "yidong",
+        "alias": "中国移动加固",
+        "libs": ["mogosec_classes", "mogosec_data", "mogosec_dexinfo", "mogosec_march", "libcmvmp.so",
+        "libmogosec_dex.so", "libmogosec_sodecrypt.so", "ibmogosecurity.so"]
+    },
+    {
+        "name": "shanhu",
+        "alias": "珊瑚灵御",
+        "libs": ["libreincp.so", "libreincp_x86.so"]
+    },
+    {
+        "name": "apktool",
+        "alias": "apktoolplus",
+        "libs": ["jiagu_data.bin", "sign.bin", "libapktoolplus_jiagu.so"]
     }
 ]

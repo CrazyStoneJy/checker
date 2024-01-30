@@ -12,10 +12,7 @@ type ProtectedDesc = {
 
 export async function check(apkName: string): Promise<string> {
     const so_files = await scan_so_file(apkName);
-    const files = so_files.map((fileName: string) => {
-        return fileName.substring(0, fileName.length - 3);
-    })
-    return has(files);
+    return has(so_files);
 }
 
 async function scan_so_file(apkName: string): Promise<string[]> {
@@ -26,10 +23,8 @@ async function scan_so_file(apkName: string): Promise<string[]> {
     const so_libs = readdirSync(lib_path);
     // visit assets
     const assets_path = `${dir}/${apkName}/assets`;
-    const assets_files = readdirSync(assets_path);
-    const assets_so_libs = assets_files.filter((file: string) => {
-        return file.endsWith('.so');
-    })
+    const assets_so_libs = readdirSync(assets_path);
+   
     files = [...so_libs, ...assets_so_libs];
     return files;
 }
