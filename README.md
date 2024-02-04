@@ -7,3 +7,7 @@
 
 - 检测加固  
     > $ acp-cli check <apk_file>
+
+
+## 脱壳工具
+[BlackDex](https://github.com/CodingGay/BlackDex)
